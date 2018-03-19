@@ -9,7 +9,6 @@ public class ChequingAccount extends BankAccount {
 
     public ChequingAccount(double transactionFee) {
         overdraftFee = transactionFee;
-
     }
 
     public ChequingAccount(Customer accountHolder, double startBalance, double transactionFee) {
@@ -76,4 +75,5 @@ public class ChequingAccount extends BankAccount {
         return monthlyInterest;
 
     }
+
 }

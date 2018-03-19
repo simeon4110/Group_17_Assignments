@@ -1,4 +1,3 @@
-
 public class SavingsAccount extends BankAccount {
     private static double annualInterestRate;
 
@@ -7,7 +6,6 @@ public class SavingsAccount extends BankAccount {
      */
     public SavingsAccount() {
     }
-
 
     /**
      * Constructs savings account with customer, balance, and interest rate
@@ -18,7 +16,6 @@ public class SavingsAccount extends BankAccount {
         annualInterestRate = interestRate;
     }
 
-
     @Override
     /**
      * Gets the monthly fees
@@ -27,11 +24,9 @@ public class SavingsAccount extends BankAccount {
         double monthlyFee = 5;
         double monthlyInterest = 0;
 
-
         if (balance < 1000) {
             monthlyInterest = -monthlyFee +  (balance * (1.0 / 12.0) * (annualInterestRate/100.0));
         }
-
         else {
             monthlyInterest = balance * (1.0 / 12.0) * (annualInterestRate/100.0);
         }
