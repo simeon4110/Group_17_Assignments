@@ -28,7 +28,6 @@ public class ChequingAccount extends BankAccount {
         } else if (amount > balance) {
             // Charge the overdraft fee
             balance -= overdraftFee + amount;
-
         } else balance -= amount;
 
     }
