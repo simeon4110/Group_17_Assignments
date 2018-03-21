@@ -1,5 +1,4 @@
 /**
- *
  * @author Lincoln
  * A chequing account subclass of bank account,
  */
@@ -18,6 +17,34 @@ public class ChequingAccount extends BankAccount {
     }
 
     /**
+     * @return the overdraft fee as a double.
+     */
+    public double getOverdraftFee() {
+        return this.overdraftFee;
+    }
+
+    /**
+     * Sets the overdraft fee.
+     */
+    public void setOverdraftFee(double fee) {
+        this.overdraftFee = fee;
+    }
+
+    /**
+     * @return the overdraft amount as a double.
+     */
+    public double getOverdraftAmount() {
+        return overdraftAmount;
+    }
+
+    /**
+     * Sets the overdraft amount
+     */
+    public void setOverdraftAmount(double amount) {
+        this.overdraftAmount = amount;
+    }
+
+    /**
      * Withdraws specified amount from the account
      */
     public void withdraw(double amount) {
@@ -33,37 +60,9 @@ public class ChequingAccount extends BankAccount {
     }
 
     /**
-     * Gets the overdraft fee
-     */
-    public double getOverdraftFee() {
-        return this.overdraftFee;
-    }
-
-    /**
-     * Gets the overdraft amount
-     */
-    public double getOverdraftAmount() {
-        return this.overdraftAmount;
-    }
-
-    /**
-     * Sets the overdraft fee
-     */
-    public void setOverdraftFee(double fee) {
-        this.overdraftFee = fee;
-    }
-
-    /**
-     * Sets the overdraft amount
-     */
-    public void setOverdraftAmount(double amount) {
-        this.overdraftAmount = amount;
-    }
-
-    @Override
-    /**
      * Getsthe monthly fees
      */
+    @Override
     protected double getMonthlyFeesAndInterest() {
         double monthlyInterest;
         if (balance > 0) {
@@ -71,8 +70,8 @@ public class ChequingAccount extends BankAccount {
         } else {
             monthlyInterest = 0.20 * balance;
         }
-        return monthlyInterest;
 
+        return monthlyInterest;
     }
 
 }

@@ -1,77 +1,40 @@
 /**
- * This class represents a customer to be used
- * at the bank
+ * This class represents a customer to be used in the BankAccount class.
  */
-public class Customer {
-    private String name = "";
-    private int customerID = 0;
+public final class Customer {
+    private final String name;
+    private final int customerID;
 
     /**
-     * Constructs a customer for customer param
+     * Constructs a customer for customer param.
      */
     public Customer(Customer aCustomer) {
-        name = aCustomer.name;
-        customerID = aCustomer.customerID;
-    }
-
-    /**
-     * Constructs a customer for no params
-     */
-    public Customer() {
+        this.name = aCustomer.name;
+        this.customerID = aCustomer.customerID;
     }
 
     /**
      * Constructs for name and ID
      */
     public Customer(String aName, int aID) {
-        name = aName;
-        customerID = aID;
+        this.name = aName;
+        this.customerID = aID;
     }
 
     /**
      * Constructs the initial ID of the customer
-     *
-     * @return
      */
     public Customer(int inputID) {
         customerID = inputID;
+        name = "";
     }
 
     /**
      * Constructs the initial name of the customer
-     *
-     * @return
      */
     public Customer(String userName) {
         name = userName;
-    }
-
-    /**
-     * Gets the name
-     */
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * Gets the customer ID
-     */
-    public int getID() {
-        return this.customerID;
-    }
-
-    /**
-     * Sets the name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Sets the customer ID
-     */
-    public void setID(int newID) {
-        this.customerID = newID;
+        customerID = 0;
     }
 
     /**
@@ -79,5 +42,19 @@ public class Customer {
      */
     public String toString() {
         return "Customer :" + this.name + ", " + this.customerID;
+    }
+
+    /**
+     * @return the customer's name as a string.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @return the customer's ID as an int.
+     */
+    public int getCustomerID() {
+        return customerID;
     }
 }
